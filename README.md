@@ -1,2 +1,2 @@
 # TestGit
-getting started with github
+Programming in C/C++

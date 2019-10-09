@@ -36,7 +36,7 @@ int main (int argc,char *argv[])   // passing command line arguments
 for(int i=0;i<argc; i++)
 {
 
-cout<<"Argument " <<i<< " is"<< argv[i]<<endl;
+cout<<"Argument " <<i<< " is"<< argv[i];
 
 }
 

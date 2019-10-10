@@ -2,4 +2,4 @@ readMe_bubble_sort
  Created on: Sep 28, 2019
      Author: ramneet
 Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements,
-if they are in wrong order.
+if they are in wrong order. The final result can be printed in ascending or decending order.

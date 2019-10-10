@@ -3,6 +3,9 @@
  *
  *  Created on: Oct 8, 2019
  *      Author: ramneet
+C++ program that takes an argument as ”capital case letter” to print out English letters from ”A-Z” as capital case, 
+and to print out ”a-z” as lower case if the argument as ”lower case letter” by using recursion in C++. 
+This code run through command line window (e.g. CMD or Linux terminal).
  */
 // Recursion program
 #include <iostream>

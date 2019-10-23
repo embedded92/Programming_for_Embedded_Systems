@@ -1,9 +1,13 @@
 /*
- * queue.c
+ * Queue.c
  *
- *  Created on: Oct 17, 2019
+ *  Created on: Oct 23, 2019
  *      Author: ramneet
  */
+/*
+ * Queue implementation using array.
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -24,8 +28,8 @@ struct	queue_struct
 typedef struct queue_struct	queue_t;
 typedef unsigned short int	bool_t;
 
-/* 
-   FUNCTIONS DEFINATION 
+/*
+   FUNCTIONS DEFINATION
 */
 bool_t	queue_empty(queue_t* q)
 {
@@ -74,11 +78,11 @@ int main()
 {
 	/* declare and initialize variables */
 	queue_t	queue;
-        queue.tail = 0;
+    queue.tail = 0;
 	queue.head=queue.tail;
 
-	int queue_arr[10] = {52, -29, 36, 1154, 72,
-			    0, 68, 44, 33, 59};
+	int queue_arr[10] = {11, -21, 35, 765, 1287,
+			    99, 33, 0, 5641, 95};
 
 	/* load Queue-array */
 	size_t	i;
@@ -88,7 +92,7 @@ int main()
 		enqueue(&queue, queue_arr[i]);
 		printf("enqueue: adding elements in the queue %d\n", queue_arr[i]);
 	}
-	
+
 	/*dequeue */
 	int x;
 	while (queue_empty(&queue) == FALSE)
@@ -100,7 +104,10 @@ int main()
 
 	/* test error function */
 	x = dequeue(&queue); /* comment this out to avoid error */
-	
+
 	return EXIT_SUCCESS;
 
 }
+
+
+

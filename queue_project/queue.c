@@ -4,7 +4,6 @@
  *  Created on: Oct 17, 2019
  *      Author: ramneet
  */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -12,21 +11,22 @@
 #define	L	1024
 #define	TRUE	1U
 #define	FALSE	0U
-
 /*
- * struct and typedef declarations
+  STRUCT AND TYPEDEF DECLARATION
 */
 struct	queue_struct
 {
-	int	data[L];
-	size_t 	tail;
+	int data[L];
+	size_t tail;
 	size_t head;
 };
 
 typedef struct queue_struct	queue_t;
 typedef unsigned short int	bool_t;
 
-/* *************** FUNCTIONS ***************** */
+/* 
+   FUNCTIONS DEFINATION 
+*/
 bool_t	queue_empty(queue_t* q)
 {
 	if (q -> tail == q -> head)
@@ -38,8 +38,8 @@ bool_t	queue_empty(queue_t* q)
 		return FALSE;
 	}
 }
-/**
- * Enqueue/Insert an element to the queue.
+/*
+   Enqueue/Insert an element to the queue
  */
 int enqueue( queue_t* q, int x)
 {
@@ -53,13 +53,13 @@ int enqueue( queue_t* q, int x)
 		q->tail=q->tail+1;
 	}
 }
-/**
- * Dequeue/Remove an element from the queue.
- */
+/*
+  Dequeue/Remove an element from the queue
+*/
  int dequeue(queue_t* q)
 {
    int x= q->data[q->head];
-if(q->head==L)
+   if(q->head==L)
     {
     	q->head=1;
     }
@@ -74,7 +74,7 @@ int main()
 {
 	/* declare and initialize variables */
 	queue_t	queue;
-    queue.tail = 0;
+        queue.tail = 0;
 	queue.head=queue.tail;
 
 	int queue_arr[10] = {52, -29, 36, 1154, 72,
@@ -88,6 +88,7 @@ int main()
 		enqueue(&queue, queue_arr[i]);
 		printf("enqueue: adding elements in the queue %d\n", queue_arr[i]);
 	}
+	
 	/*dequeue */
 	int x;
 	while (queue_empty(&queue) == FALSE)
@@ -99,7 +100,7 @@ int main()
 
 	/* test error function */
 	x = dequeue(&queue); /* comment this out to avoid error */
-
+	
 	return EXIT_SUCCESS;
 
 }

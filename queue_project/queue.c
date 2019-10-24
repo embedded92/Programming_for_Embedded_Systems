@@ -1,8 +1,11 @@
 /*
- * queue.c
+ * Queue.c
  *
- *  Created on: Oct 17, 2019
+ *  Created on: Oct 23, 2019
  *      Author: ramneet
+ */
+/*
+ * Queue implementation using array.
  */
 
 #include <stdio.h>
@@ -12,21 +15,22 @@
 #define	L	1024
 #define	TRUE	1U
 #define	FALSE	0U
-
 /*
- * struct and typedef declarations
+  STRUCT AND TYPEDEF DECLARATION
 */
 struct	queue_struct
 {
-	int	data[L];
-	size_t 	tail;
+	int data[L];
+	size_t tail;
 	size_t head;
 };
 
 typedef struct queue_struct	queue_t;
 typedef unsigned short int	bool_t;
 
-/* *************** FUNCTIONS ***************** */
+/*
+   FUNCTIONS DEFINATION
+*/
 bool_t	queue_empty(queue_t* q)
 {
 	if (q -> tail == q -> head)
@@ -38,8 +42,8 @@ bool_t	queue_empty(queue_t* q)
 		return FALSE;
 	}
 }
-/**
- * Enqueue/Insert an element to the queue.
+/*
+   Enqueue/Insert an element to the queue
  */
 int enqueue( queue_t* q, int x)
 {
@@ -53,13 +57,13 @@ int enqueue( queue_t* q, int x)
 		q->tail=q->tail+1;
 	}
 }
-/**
- * Dequeue/Remove an element from the queue.
- */
+/*
+  Dequeue/Remove an element from the queue
+*/
  int dequeue(queue_t* q)
 {
    int x= q->data[q->head];
-if(q->head==L)
+   if(q->head==L)
     {
     	q->head=1;
     }
@@ -77,8 +81,8 @@ int main()
     queue.tail = 0;
 	queue.head=queue.tail;
 
-	int queue_arr[10] = {52, -29, 36, 1154, 72,
-			    0, 68, 44, 33, 59};
+	int queue_arr[10] = {11, -21, 35, 765, 1287,
+			    99, 33, 0, 5641, 95};
 
 	/* load Queue-array */
 	size_t	i;
@@ -88,6 +92,7 @@ int main()
 		enqueue(&queue, queue_arr[i]);
 		printf("enqueue: adding elements in the queue %d\n", queue_arr[i]);
 	}
+
 	/*dequeue */
 	int x;
 	while (queue_empty(&queue) == FALSE)
@@ -103,3 +108,6 @@ int main()
 	return EXIT_SUCCESS;
 
 }
+
+
+

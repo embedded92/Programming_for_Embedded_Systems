@@ -37,7 +37,8 @@
  ****************************************************************************/
 
 #define TICKRATE_HZ1 (10)	/* 10 ticks per second */
-
+//unsigned short int which_LED=0;
+//static int which_LED;
 /*****************************************************************************
  * Public types/enumerations/variables
  ****************************************************************************/
@@ -56,8 +57,49 @@
  */
 void SysTick_Handler(void)
 {
-	Board_LED_Toggle(0);
-}
+	/*bool st_R, st_G, st_B; //states of RED GREEN n BLUE LEDs
+	st_R= Board_LED_Test(0);
+	st_G= Board_LED_Test(1);
+	st_B= Board_LED_Test(2);
+
+	if ((st_R== true) | (st_R==1))
+	{
+		Board_LED_Toggle(0);
+	}
+	else if ((st_G== true) | (st_G==1))
+	{
+		Board_LED_Toggle(1);
+		}
+	else if ((st_B== true) | (st_B==1))
+		{
+			Board_LED_Toggle(2);
+			}
+	else{
+	*/
+	//RED on--wait--off--GREEN on--wait--off--BLUE 0n--wait--off REPEAT
+	int c=1;
+	Board_LED_Set(0, 0);
+		for(c=1;c<1000;c++)
+			for(int i=0;i<7000; i++);
+	Board_LED_Set(0,  1);
+		for(c=1;c<1000;c++)
+			for(int i=0;i<7000; i++);
+
+	Board_LED_Set(1, 0);
+		for(c=1;c<1000;c++)
+			for(int i=0;i<7000; i++);
+	Board_LED_Set(1,  1);
+		for(c=1;c<1000;c++)
+			for(int i=0;i<7000; i++);
+
+	Board_LED_Set(2, 0);
+		for(c=1;c<1000;c++)
+			for(int i=0;i<7000; i++);
+	Board_LED_Set(2,  1);
+		for(c=1;c<1000;c++)
+			for(int i=0;i<7000; i++);
+	}
+
 
 /**
  * @brief	main routine for systick example
@@ -78,6 +120,6 @@ int main(void)
 	}
 
 	return 0;
-}
+};
 
 

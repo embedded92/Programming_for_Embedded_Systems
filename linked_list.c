@@ -73,7 +73,7 @@ node_t* ListDelete(node_t* pHead, unsigned int key)
 
    // Check to see if current node is one to be deleted.
 
-  if (pHead->key == key) {
+  if (pHead->data == key) {
 	  node_t*  tempNextP;
 
     // Save the next pointer in the node.
@@ -93,11 +93,32 @@ node_t* ListDelete(node_t* pHead, unsigned int key)
   return pHead;}
 }
 
+node_t insertnodeAfter(struct Node* pHead, int new_data) 
+{ 
+    /*1. check if the given prev_node is NULL */
+    if (pPrevious == NULL) 
+    { 
+      printf("the given previous node cannot be NULL"); 
+      return NULL; 
+    } 
+  
+    /* 2. allocate new node */
+    struct Node* new_node =(struct Node*) malloc(sizeof(struct Node)); 
+  
+    /* 3. put in the data  */
+    new_node->data  = new_data; 
+  
+    /* 4. Make next of new node as next of prev_node */
+    new_node->next = pPrevious->next; 
+  
+    /* 5. move the next of prev_node as new_node */
+    pPrevious->next = new_node;
+	return pHead;
+} 
 
 int main()
 {
 	int arr[]={56,87,324,2,54,67,21};
-
 
 	return 0;
 }

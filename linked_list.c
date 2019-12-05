@@ -93,26 +93,26 @@ node_t* ListDelete(node_t* pHead, unsigned int key)
   return pHead;}
 }
 
-node_t insertnodeAfter(struct Node* pHead, int new_data) 
+node_t insertnodeAfter(node_t* pHead, unsigned int key) 
 { 
     /*1. check if the given prev_node is NULL */
-    if (pPrevious == NULL) 
+    if (pHead == NULL) 
     { 
       printf("the given previous node cannot be NULL"); 
       return NULL; 
     } 
   
     /* 2. allocate new node */
-    struct Node* new_node =(struct Node*) malloc(sizeof(struct Node)); 
+    node_t* inst_node =(node_t*) malloc(sizeof(node_t)); 
   
     /* 3. put in the data  */
-    new_node->data  = new_data; 
+    inst_node->data  = key; 
   
     /* 4. Make next of new node as next of prev_node */
-    new_node->next = pPrevious->next; 
+    inst_node->pNext = pHead->pNext; 
   
     /* 5. move the next of prev_node as new_node */
-    pPrevious->next = new_node;
+    pHead->pNext = inst_node;
 	return pHead;
 } 
 

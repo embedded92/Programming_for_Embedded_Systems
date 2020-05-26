@@ -5,8 +5,6 @@
 #include <sys/socket.h>
 
 #include <netinet/in.h>
-
-
 int main()
 {
     // create a socket 

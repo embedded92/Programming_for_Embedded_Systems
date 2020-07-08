@@ -65,13 +65,11 @@ void transferCommunity(size_t iT, size_t jT,
  */
 size_t countLiveNeighbours(size_t row, size_t col)
 {
-	// your code goes here
-
 	size_t cell_count = 0;
 	size_t neighbour_arr[h_posn + 1];
 
 	neighbour_arr[a_posn] =
-			env[LEFT_NEIGHBOUR_ROW(row)][TOP_NEIGHBOUR_COL(col)]; //env[d][b]
+			env[LEFT_NEIGHBOUR_ROW(row)][TOP_NEIGHBOUR_COL(col)];
 	neighbour_arr[b_posn] = env[row][TOP_NEIGHBOUR_COL(col)];
 	neighbour_arr[c_posn] =
 			env[RIGHT_NEIGHBOUR_ROW(row)][TOP_NEIGHBOUR_COL(col)];
@@ -88,9 +86,6 @@ size_t countLiveNeighbours(size_t row, size_t col)
 		cell_count += neighbour_arr[i];
 	}
 
-#ifdef DEBUG
-	printf("returning cell count:%lu \r\n", cell_count);
-	#endif
 	return cell_count;
 }
 /*
@@ -196,19 +191,11 @@ void* updateCommFunc(void *param)
 	size_t comm_first_col = threadid->col * config_MC;
 	size_t comm_first_row = threadid->row * config_NC;
 	//  get the cordinates of first cell of community
-
-#ifdef DEBUG
-	printf("thread for r:%lu, c:%lu\r\n", threadid->col, threadid->row);
-	#endif
 	while (1)
 	{
 		if (reproduction_flag)
 		{
 
-#ifdef DEBUG
-		printf(" row:%lu col:%lu\r\n", threadid->row*config_K, threadid->col*config_L );
-		#endif
-			// your code goes here
 			for (int i = comm_first_row; i < comm_first_row + config_NC; i++)
 			{
 				for (int j = comm_first_col; j < comm_first_col + config_MC;

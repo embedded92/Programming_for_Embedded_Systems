@@ -11,9 +11,9 @@
 #include <pthread.h>
 #include <unistd.h>
 #include <ncurses.h>
-#include "gol_config.h"
-#include "cells.h"
-#include "display.h"
+#include "../includes/gol_config.h"
+#include "../includes/cells.h"
+#include "../includes/display.h"
 
 /*
  * global variables
@@ -30,6 +30,28 @@ WINDOW *win;
 /*
  * main code
  */
+
+void printEnvironment(void)
+{
+	int loop1;
+	int loop2;
+	printf(
+			"--------------------------------------------------------------------\r\n");
+
+	for (loop1 = 0; loop1 < config_NE; loop1++)
+	{
+		for (loop2 = 0; loop2 < config_ME; loop2++)
+		{
+			if (env[loop1][loop2] == live)
+				printf("*");
+			else
+				printf(" ");
+		}
+		printf("\r\n");
+	}
+	printf("\r\n");
+}
+
 int main(void)
 {
 	pthread_t threadptrs[config_K * config_L]; // our thread handles
@@ -59,7 +81,7 @@ int main(void)
 	}
 
 	// initialize display with ncurses
-	initDisplay();
+	//initDisplay();
 
 	unsigned short int ctr = 0;
 	while (1)
@@ -71,7 +93,8 @@ int main(void)
 		if (++ctr == config_TDISP)
 		{
 			ctr = 0;
-			updateDisplay();
+			//updateDisplay();
+			printEnvironment();
 		}
 		copyEnvironment(); // write changes to the environment, env, from update_env
 	}

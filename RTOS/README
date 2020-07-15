@@ -1,1 +1,10 @@
 
+Game of Life program here is demonstrated for four communities(one down and four across), where the size of each community is 32x16(rows=32, col=16) in size. 
+These 4 communities make an environment where cells being the smallest unit in the system.
+
+There are four Threads in this system, each one is updating a community. 
+During the process of  thread creation by pthread_create function , updateCommFunn function is passed as a function pointer to this thread.
+
+In this program  we are asking the user to enter values for community, 1 representing live cell and 0 representing dead cell. 
+Then we copy these same values to the other communities as well. This is done as part of the “initEnvironment()” function. 
+After initializing the environment with the respective values. We create multiple threads one for each community, and each thread has the responsibility of updating one community. 

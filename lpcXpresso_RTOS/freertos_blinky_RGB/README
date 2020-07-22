@@ -1,5 +1,6 @@
-Along with the default freeTROS_blinky project, this project includes all two other LEDs as it does not provide access to the Blue and Green on-board LEDs by default!
-The full RGB features of the onboard LEDs are utilized, in order to perform our RTOS experiments.
+Along with the default(LED1, RED) freeTROS_blinky project, this project includes two other LEDs(LED2,Green and LED3,Blue).
+In default settings, there is no access to the Blue and Green on-board LEDs !
+The full RGB features of the onboard LEDs are utilized in this project, in order to perform our RTOS experiments.
 
 To do this, the board.c and board.h libraries are modified.
 (the board.c and board.h are under lpc_board_nxp_lpcxpresso_1769 project)

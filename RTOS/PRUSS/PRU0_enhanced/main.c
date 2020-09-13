@@ -1,9 +1,7 @@
 /*
  * Blinky-Button Host C program (based on remoteproc) for Pocket Beagle
  * 	this project is documented elsewhere, link on github repository
- * 	
- * 	author: Takis Zourntos
- * 	date: 04-27-2019
+ * 
  * 
  */
 

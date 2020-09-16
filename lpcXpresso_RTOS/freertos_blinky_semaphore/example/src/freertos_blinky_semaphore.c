@@ -67,7 +67,6 @@ static void vLEDTask1(void *pvParameters) {
 			Board_LED_Set(0, LedState);
 			LedState = (bool) !LedState;
 
-			/* About a 3Hz on/off toggle rate */
 			vTaskDelay(500);
 			xSemaphoreGive(barrierSemaphore);
 		} else {
@@ -86,7 +85,6 @@ static void vLEDTask2(void *pvParameters) {
 			Board_LED_Set(1, LedState);
 			LedState = (bool) !LedState;
 
-			/* About a 7Hz on/off toggle rate */
 			vTaskDelay(500);
 			xSemaphoreGive(barrierSemaphore);
 		} else {
@@ -104,7 +102,6 @@ static void vLEDTask3(void *pvParameters) {
 			Board_LED_Set(2, LedState);
 			LedState = (bool) !LedState;
 
-			/* About a 7Hz on/off toggle rate */
 			vTaskDelay(500);
 			xSemaphoreGive(barrierSemaphore);
 		} else {

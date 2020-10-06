@@ -1,1 +1,15 @@
+This is a FreeRTOS application that flashes the LPC1769 RGB LED as follows:
+0) all LEDs OFF
+1) RED LED On for 1 second
+2) all LEDs are off 0.5 seconds
+3) GREEN LED On for 1 second
+4) all LEDs are off 0.5 seconds
+5) BLUE LED On for 1 second
+6) all LEDs are off for 0.5 seconds
+7) go to 1)
 
+This program uses ONE LED task functions and the tasks are prioritized  as follows:
+
+RED LED Task priority = 3
+GREEN LED Task priority = 2
+BLUE LED Task priority = 1

@@ -2,7 +2,6 @@
  * display.c
  *
  *  Created on: May 30, 2020
- *      author: takis
  *      note: a lot of this code adapted from the TDLP tutorial on ncurses,
  *      by Pradeep Padala
  */

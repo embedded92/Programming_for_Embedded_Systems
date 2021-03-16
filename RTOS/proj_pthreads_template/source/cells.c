@@ -2,7 +2,7 @@
  * cells.c
  *
  *  Created on: May 30, 2020
- *      Author: takis
+ *      Author: Ramneet Kaur
  */
 
 #include <stdio.h>

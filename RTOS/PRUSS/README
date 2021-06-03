@@ -1,5 +1,5 @@
 Hardware Solutions for Real-Time Operation in Embedded Systems
-Case study: the Texas Instruments PRU-ICSS on the Sitara AM335x Embedded SoC
+Case study: the Texas Instruments PRU-ICSS on the Sitara AM335x Embedded System On Chip (SoC)
 
 The AM335x features two on-chip programmable real-time units (PRUs) which are themselves 32-bit RISC cores operating at 200 MHz
 Because real-time operation is often critical in embedded systems applications,getting into the PRU subsystem (PRUSS) is important for developers who like the potential of Linux but need a hard-real-time solution. 
